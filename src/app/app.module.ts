@@ -6,19 +6,19 @@ import { AppComponent }         from './app.component';
 import { routing,
          appRoutingProviders }  from './app.routing';
 
-import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeModule } from './home/home.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     routing,
-    DashboardModule,
     HomeModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   providers: [
     appRoutingProviders

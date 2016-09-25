@@ -1,8 +1,10 @@
+import {HomeDetailComponent} from './homeDetail.component';
+import {HomeCenterComponent} from './homeCenter.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { homedRouting } from './home.routing';
-import { HomeComponent } from './home.component';
+import {homedRouting} from './home.routing';
+import {HomeComponent} from './home.component';
 
 @NgModule({
   imports: [
@@ -11,7 +13,9 @@ import { HomeComponent } from './home.component';
     homedRouting
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HomeCenterComponent,
+    HomeDetailComponent
   ],
   providers: [
   ]
