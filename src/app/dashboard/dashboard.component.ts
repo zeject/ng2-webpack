@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './../home/auth.service';
+import { AuthService } from './../+home/auth.service';
 
 @Component({
     moduleId: module.id,
@@ -28,7 +28,7 @@ export class DashboardComponent {
             if (this.authService.isLoggedIn) {
                 // Get the redirect URL from our auth service
                 // If no redirect has been set, use the default
-                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/crisis-center/admin';
+                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/home';
                 // Redirect the user
                 this.router.navigate([redirect]);
             }

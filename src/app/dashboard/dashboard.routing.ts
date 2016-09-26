@@ -1,5 +1,5 @@
-import { AuthGuard } from '../home/auth-guard.service';
-import { AuthService } from '../home/auth.service';
+import { AuthGuard } from '../+home/auth-guard.service';
+import { AuthService } from '../+home/auth.service';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';

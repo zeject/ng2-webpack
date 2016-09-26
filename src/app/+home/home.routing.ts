@@ -1,14 +1,15 @@
-import { HomeCenterComponent } from './homeCenter.component';
+import {HomeDetailComponent} from './home-detail.component';
+import {HomeCenterComponent} from './home-center.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { HomeDetailComponent } from './homeDetail.component';
-import { AuthGuard } from './auth-guard.service';
+import {HomeComponent} from './home.component';
+import {AuthGuard} from './auth-guard.service';
+import { HomeDetailResolve } from './home-detail-resolve.service';
 
 const homedRoutes: Routes = [
-    
+
     {
-        path: 'home',
+        path: '',
         component: HomeComponent,
         canActivate: [AuthGuard],
         children: [
@@ -18,7 +19,10 @@ const homedRoutes: Routes = [
                 children: [
                     {
                         path: ':id',
-                        component: HomeDetailComponent
+                        component: HomeDetailComponent,
+                        resolve: {
+                            isExist: HomeDetailResolve
+                        }
                     },
                     {
                         path: '',
