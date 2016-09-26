@@ -6,6 +6,16 @@ import {HomeComponent} from './home.component';
 import {AuthGuard} from './auth-guard.service';
 import { HomeDetailResolve } from './home-detail-resolve.service';
 
+
+export const loadHomeRoutes: Routes = [
+    {
+        path: 'home',
+        loadChildren: () => System.import('./home.module'),
+        // loadChildren: 'app/home/home.module#HomeModule',
+        canLoad: [AuthGuard]
+    }
+];
+
 const homedRoutes: Routes = [
 
     {

@@ -1,19 +1,24 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
-import { AppComponent }         from './app.component';
-import { routing,
-         appRoutingProviders }  from './app.routing';
+import './rxjs-operators';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {routing, appRoutingProviders} from './app.routing';
+import {AppComponent} from './app.component';
+
+import {DashboardComponent} from './dashboard/dashboard.component';
+import { HttpTestModule } from './http/http.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    routing
-    // HomeModule
+    HttpModule,
+    JsonpModule,
+    routing,
+    HttpTestModule
   ],
   declarations: [
     AppComponent,

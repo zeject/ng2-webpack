@@ -2,19 +2,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { authProviders, dashboardRoutes } from './dashboard/dashboard.routing';
 import { AuthGuard } from './+home/auth-guard.service';
-
-const homeRoutes: Routes = [
-    {
-        path: 'home',
-        loadChildren: () => System.import('./+home/home.module'),
-        // loadChildren: 'app/home/home.module#HomeModule',
-        canLoad: [AuthGuard]
-    }
-];
+import { loadHomeRoutes } from './+home/home.routing';
 
 const appRoutes: Routes = [
     ...dashboardRoutes,
-    ...homeRoutes
+    ...loadHomeRoutes
 ];
 
 export const appRoutingProviders: any[] = [

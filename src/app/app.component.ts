@@ -14,6 +14,10 @@ import { Component, OnInit } from '@angular/core';
         <a [routerLink]=" ['./dashboard'] " routerLinkActive="active">
           dashboard
         </a>
+        |
+        <a [routerLink]=" ['./http'] " routerLinkActive="active">
+          http
+        </a>
         <router-outlet></router-outlet>
     `
 })
