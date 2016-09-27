@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService, Obj } from './http.service';
 
 @Component({
-    moduleId: module.id,
+    // moduleId: module.id,
     selector: 'http',
     template: `
         <h2>HTTP</h2>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-    moduleId: module.id,
+    // moduleId: module.id,
     selector: 'home-detail',
     template: `
         <button (click)="goHome()">go home</button>

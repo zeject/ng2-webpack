@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './../+home/auth.service';
 
 @Component({
-    moduleId: module.id,
+    // moduleId: module.id,
     selector: 'dashboard',
     template: `
         <h2>LOGIN</h2>
