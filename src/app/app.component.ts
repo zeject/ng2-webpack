@@ -18,6 +18,10 @@ import { Component, OnInit } from '@angular/core';
         <a [routerLink]=" ['./http'] " routerLinkActive="active">
           http
         </a>
+        |
+        <a [routerLink]=" ['./communication'] " routerLinkActive="active">
+          communication
+        </a>
         <router-outlet></router-outlet>
     `
 })
