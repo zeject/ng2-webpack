@@ -3,11 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     // moduleId: module.id,
     selector: 'home',
-    styles: [`
-        .c {
-            color: #aca;
-        }
-    `],
+    styleUrls: ['home.scss'],
     template: `
         <div class="c">home Page</div>
         <router-outlet></router-outlet>
