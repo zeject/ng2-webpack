@@ -14,7 +14,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin'); 
+const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 /*
  * Webpack Constants
@@ -31,7 +31,7 @@ const METADATA = {
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-module.exports = function(options) {
+module.exports = function (options) {
   isProd = options.env === 'production';
   return {
 
@@ -49,7 +49,7 @@ module.exports = function(options) {
      *
      * See: http://webpack.github.io/docs/configuration.html#cache
      */
-     //cache: false,
+    //cache: false,
 
     /*
      * The entry point for the bundle
@@ -60,8 +60,8 @@ module.exports = function(options) {
     entry: {
 
       'polyfills': './src/polyfills.browser.ts',
-      'vendor':    './src/vendor.browser.ts',
-      'main':      './src/main.browser.ts'
+      'vendor': './src/vendor.browser.ts',
+      'main': './src/main.browser.ts'
 
     },
 
@@ -96,8 +96,7 @@ module.exports = function(options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
        */
-      preLoaders: [
-        {
+      preLoaders: [{
           test: /\.ts$/,
           loader: 'string-replace-loader',
           query: {
@@ -169,24 +168,28 @@ module.exports = function(options) {
         },
 
         /* File loader for supporting images, for example, in CSS files.
-        */
+         */
         {
           test: /\.(jpg|png|gif)$/,
           loader: 'file'
+        },
+
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
         }
       ],
 
-      postLoaders: [
-        {
-          test: /\.js$/,
-          loader: 'string-replace-loader',
-          query: {
-            search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
-            replace: 'var sourceMappingUrl = "";',
-            flags: 'g'
-          }
+      postLoaders: [{
+        test: /\.js$/,
+        loader: 'string-replace-loader',
+        query: {
+          search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
+          replace: 'var sourceMappingUrl = "";',
+          flags: 'g'
         }
-      ]
+      }]
     },
 
     /*
