@@ -15,6 +15,7 @@ export class HomeDetailComponent implements OnInit {
     private id: number;
     private isExist : boolean;
     ngOnInit() {
+        console.log(this.route.snapshot.params['id']);
         this.route.params.forEach((params: Params) => {
             let id = +params['id']; // (+) converts string 'id' to a number
             this.id = id;
